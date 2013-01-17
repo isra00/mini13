@@ -3,38 +3,118 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mini13-small.css">
+    <link rel="stylesheet" href="css/mini13-big.css">
+  	<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600|Merriweather:300|Josefin+Slab' rel='stylesheet' type='text/css'>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+    <div class="main">
+    
+      <header>
+        <h1>Blog de Israel Viana</h1>
+      </header>
+    
+      <div class="content">
+    
+        <section class="post">
+          <hgroup>
+            <h2>WordPress multi-site sin WordPress multi-site</h2>
+            <abbr title="fecha en formato ISO">1 de enero de 2013</abbr>
+          </hgroup>
+          <div class="post-body">
+            <p>Como <a title="Buscar información sobre WordPress Multisite" href="http://www.usaelputogoogle.com/claudio.php?q=wordpress+multisite">sabrás</a>, WordPress permite alojar varios sitios diferentes con una misma instancia del CMS. Pero este sistema tiene algunas <strong>limitaciones</strong>:</p>
+            <ul>
+            <li>Los sitios deben estar en subdominios o subdirectorios, por ejemplo blog1.example.org o example.org/blog1. No puedes usar nombres de dominio únicos (blog1.com, blog2.com). El plug-in <a href="http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/">MU Domain Mapping</a> resuelve esta limitación, pero hace magia negra, y no mola.</li>
+            <li>Todos los sitios comparten los themes, plug-ins, usuarios y base de datos (problema de escalabilidad: no podrías usar varios servidores de MySQL). Eso no mola nada. En mi caso, porque tengo diferentes sitios con diferentes administradores y cada uno tiene sus themes y plug-ins.</li>
+            </ul>
+            <p>Así que, viendo cómo funciona el proceso de carga de WordPress, me he dado cuenta de que se puede hacer muy fácilmente un <em>hack</em> que nos permita tener bases de datos, themes y plug-ins separados para cada sitio, y que se puedan mapear a dominios diferentes&#8230; más o menos como hace Drupal con el multi-site. Un multi-site de verdad.</p>
+            <p>Dicho así parece complicado, pero solo hay que pararse un segundo a pensar. Imaginemos que tenemos dos instancias completamente independientes, dos WordPress normales y corrientes, cada uno con su base de datos, etc.</p>
+            <p>¿Qué tienen de diferente esas dos instancias?</p>
+            <p>La base de datos, el directorio wp-content y el fichero wp-config.php. Todo lo demás es exactamente igual. Duplicado.</p>
+            <p>Por tanto, si &#8220;engañamos&#8221; de alguna forma al cargador de WordPress para cargue un wp-content y wp-config.php u otro en función del nombre de dominio, este se conectará a una u otra base de datos, ya que la información de conexión a MySQL está especificada en wp-config.php. Por tanto, habremos logrado WordPress multi-site.</p>
+            <p>¿Y cómo hacemos ese truco para &#8220;engañar&#8221; a WordPress y hacer que cargue uno u otro directorio wp-content y fichero de configuración wp-config.php? En primer lugar, organizaremos nuestros sitios. Por ejemplo, en la raíz de la instancia crearemos un directorio sites, dentro del cual pondremos los wp-config.php y wp-content de cada sitio, en sub-directorios nombrados con el nombre de dominio:</p>
+            <p><a href="http://i0.wp.com/israelviana.es/wp-content/uploads/2012/11/wp-interceptor-fs1.png?resize=198%2C336"><img class="aligncenter size-full wp-image-954" title="wp-interceptor-fs1" alt="" src="http://i0.wp.com/israelviana.es/wp-content/uploads/2012/11/wp-interceptor-fs1.png?resize=198%2C336" data-recalc-dims="1" /></a><a href="http://i0.wp.com/israelviana.es/wp-content/uploads/2012/11/wp-interceptor-fs2.png?resize=160%2C67"><img class="aligncenter size-full wp-image-955" title="wp-interceptor-fs2" alt="" src="http://i0.wp.com/israelviana.es/wp-content/uploads/2012/11/wp-interceptor-fs2.png?resize=160%2C67" data-recalc-dims="1" /></a><a href="http://i1.wp.com/israelviana.es/wp-content/uploads/2012/11/wp-interceptor-fs3.png?resize=376%2C134"><img class="aligncenter size-full wp-image-956" title="wp-interceptor-fs3" alt="" src="http://i1.wp.com/israelviana.es/wp-content/uploads/2012/11/wp-interceptor-fs3.png?resize=376%2C134" data-recalc-dims="1" /></a></p>
+            <p>Ahora viene lo bueno. Si echamos un vistazo a <a href="http://core.svn.wordpress.org/trunk/wp-load.php">wp-load.php</a> vemos que aquí se carga wp-config.php y se declara la constante <strong>WP_CONTENT_DIR</strong>, que indica la ubicación del directorio wp-content.</p>
+            <p><a href="http://i2.wp.com/israelviana.es/wp-content/uploads/2013/11/Captura-de-pantalla-de-2012-12-31-164354.png?resize=584%2C108"><img class="aligncenter size-full wp-image-1066" alt="Wordpress loader (wp-load.php)" src="http://i2.wp.com/israelviana.es/wp-content/uploads/2013/11/Captura-de-pantalla-de-2012-12-31-164354.png?resize=584%2C108" data-recalc-dims="1" /></a></p>
+            <p>Modificamos las declaraciones de WP_CONTENT_DIR y WP_CONFIG poniendo las rutas que nos interesen en función del nombre de dominio solicitado. El código final de wp-load.php quedaría así (<a href="https://github.com/isra00/wordpress-multisite/blob/master/wp-load.php">código completo de wp-load.php en GitHub</a>):</p>
+            <p><a href="http://i1.wp.com/israelviana.es/wp-content/uploads/2013/11/Captura-de-pantalla-de-2012-12-31-165233.png?resize=584%2C176"><img class="aligncenter size-full wp-image-1067" alt="wp-load.php interceptado (2)" src="http://i1.wp.com/israelviana.es/wp-content/uploads/2013/11/Captura-de-pantalla-de-2012-12-31-165233.png?resize=584%2C176" data-recalc-dims="1" /></a></p>
+            <p><img class="aligncenter size-full wp-image-1068" alt="wp-load.php interceptado (1)" src="http://i0.wp.com/israelviana.es/wp-content/uploads/2013/11/Captura-de-pantalla-de-2012-12-31-165251.png?resize=543%2C108" data-recalc-dims="1" /></p>
+            <p>Para tener todo listo solo faltan dos detalles: la configuración de Apache y la creación de la base de datos.</p>
+            <h3>Crear la base de datos</h3>
+            <p>Para crear la base de datos de cada site, simplemente tendremos que clonar la BD de un WordPress recién instalado para los demás sitios. No sería difícil automatizarlo con un script.</p>
+            <h3>Configurar Apache</h3>
+            <p>La configuración necesaria para un WordPress multi-sitio con esta receta es muy sencilla: crear tantos <em>vhosts</em> como queramos, haciendo que todos ellos tengan el mismo DocumentRoot. Por ejemplo:</p>
+            <pre class="brush: plain; title: ; notranslate" title="">ServerName wp1.com
+ServerAlias  wp2.com wp3.com
+DocumentRoot /var/www/wp-multisite</pre>
+            <p>Otro detalle importante: para que los administradores de los diferentes sitios puedan acceder a sus directorios wp-content particulares (y solo a los suyos), puedes crear usuarios del sistema (Linux, por supuesto) cuyo directorio $HOME es el subdirectorio de sites que le corresponde. Por ejemplo, para el usuario administrador de blog1.com, su directorio $HOME sería /var/www/wp-multisite/sites/blog1.com, suponiendo que tengamos la instancia de WordPress en /var/www/wp-multisite.</p>
+            <h3>Conclusión</h3>
+            <p>Al final, con este sistema lo que tenemos es prácticamente igual a tener instancias independientes de WordPress, pero con algunas ventajas interesantes:</p>
+            <ul>
+            <li>Actualizaciones del núcleo centralizadas, ya que tenemos una sola instancia. Ya no tendrás que ir actualizando sitio por sitio. Eso sí, los plug-ins y themes se deben actualizar independientemente.</li>
+            <li>Ahorro de memoria: ahorras disco duro, y sobre todo ahorras RAM si usas APC (si no lo estás usando&#8230; ¡deberías hacerlo!). Una instancia de WordPress ocupa más o menos 20MB en APC; imagínate si tenemos 100 instancias de WordPress en el servidor&#8230; ¡compartiendo el código podemos ahorrar Gigas!</li>
+            </ul>
+            <h3>Desventajas</h3>
+            <ul>
+            <li>Es un sistema experimental que aún no he probado en producción, así que puede fallar por cualquier lado <img src='http://i2.wp.com/israelviana.es/wp-includes/images/smilies/icon_razz.gif?w=584' alt=':-P' class='wp-smiley' data-recalc-dims="1" /> </li>
+            <li>No existe una forma automatizada y amigable de crear nuevos sitios. Debes crearlos a mano a partir de plantillas de wp-config.php, wp-content y base de datos.</li>
+            <li>Si se actualiza el núcleo WordPress con el sistema automático, las actualizaciones que afecten a la base de datos solo afectarán a la del sitio desde el cual se haya actualizado el núcleo.</li>
+            <li>Seguridad: a no ser que se establezcan mecanismos adicionales, un administrador de un sitio puede romper con facilidad las otras instancias.</li>
+            </ul>
+          </div><!--/.post-body -->
+          <footer>
+            <p>Si te ha gustado, compártelo: <a href="" class="twittear">Twittear</a></p>
+            <hr />
+            <aside class="related-posts">
+              <h3>Lee más <span>Artículos relacionados</h3></h3>
+              <ul>
+                <li><a href="">Inyectar lógica en los métodos de cualquier clase PHP dinámicamente</a></li>
+                <li><a href="">Métricas de Plesk en Datadog</a></li>
+              </ul>
+            </aside>
+          </footer>
+          <section class="comments">
+            <h3>2 Comentarios</h3>
+            <a href="" class="show-comments">Mostrar comentarios</a>
+          </section>
+        </section><!--/.post -->
+        
+        
+      </div><!--/.content -->
+    </div><!--/.main -->
+    
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <footer class="main-footer">
+      Este blog es cultura libre. Puedes copiar y redistribuir libremente todos los artículos.
+    </footer> 
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
 </html>

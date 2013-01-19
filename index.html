@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mini13-small.css">
     <link rel="stylesheet" href="css/mini13-big.css">
-  	<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600|Merriweather:300|Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600|Merriweather:300|Josefin+Slab' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
+    
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
@@ -27,14 +30,15 @@
     <div class="main">
     
       <header>
-        <h1>Blog de Israel Viana</h1>
+        <div class="inner">
+          <h2>Israel Viana <span><span>sobre</span> <strong>Desarrollo web</strong></span></h2>
+        </div>
       </header>
-    
-      <div class="content">
-    
+
+      <div class="content">    
         <section class="post">
           <hgroup>
-            <h2>WordPress multi-site sin WordPress multi-site</h2>
+            <h1>WordPress multi-site sin WordPress multi-site</h1>
             <abbr title="fecha en formato ISO">1 de enero de 2013</abbr>
           </hgroup>
           <div class="post-body">
@@ -79,11 +83,13 @@ DocumentRoot /var/www/wp-multisite</pre>
             </ul>
           </div><!--/.post-body -->
           <footer>
-            <p>Si te ha gustado, compártelo: <a href="" class="twittear">Twittear</a></p>
-            <hr />
+            <div class="share">
+              <h3>Compártelo <span>si te ha gustado</span></h3>
+              <a href="" class="twittear">Twittear</a>
+            </div>
             <aside class="related-posts">
-              <h3>Lee más <span>Artículos relacionados</h3></h3>
-              <ul>
+              <h3>Lee más <span>artículos relacionados</h3></h3>
+              <ul class="related-articles">
                 <li><a href="">Inyectar lógica en los métodos de cualquier clase PHP dinámicamente</a></li>
                 <li><a href="">Métricas de Plesk en Datadog</a></li>
               </ul>

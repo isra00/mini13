@@ -39,7 +39,7 @@ header {
     font-style: italic;
     font-size: 2.1em;
     letter-spacing: .1em;
-    color: #333;
+    color: black;
     text-shadow: 1px 1px 0 white;
     width: auto;
     background: rgba(255,255,255,0.9);

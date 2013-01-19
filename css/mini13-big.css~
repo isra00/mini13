@@ -12,7 +12,7 @@ header {
   }
 
 .content {
-  max-width: 1040px;
+  max-width: 1050px;
   margin: 3% auto 1%;
 }
 

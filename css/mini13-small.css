@@ -2,11 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Merriweather, serif;
-}
-
-.main {
-  padding: 0;
-  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,23 +14,34 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2em;
+  line-height: 1.4em;
 }
 h2 {
   font-size: 1.8em;
+  line-height: 1.2em;
 }
 h3 {
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 
+a {
+  color: #c00;
+}
 
 /****************************** GENERAL LAYOUT ********************************/
 
+
+.main {
+  padding: 0;
+  margin: 0 auto;
+}
+
 header {
   text-align: center;
+  background: silver url(../img/campo-marzio.jpg) center bottom no-repeat;
+  margin: 0 auto;
+  border-bottom: 1px solid gray;
 }
-  header .inner {
-    background: transparent url(../img/campo-marzio.jpg) center top no-repeat;
-  }
   header h2 {
     font-family: 'Playfair Display SC';
     font-style: italic;
@@ -44,7 +52,6 @@ header {
     width: auto;
     background: rgba(255,255,255,0.9);
     margin: 0;
-    padding: 1% 0 3%;
   }
     header h2 > span {
       display: block;
@@ -54,9 +61,6 @@ header {
       header h2 span span {
         font-size: .65em;
       }
-    header h2 strong {
-      
-    }
 
 .content {
   margin: 3% 3% 1% 2%;
@@ -112,7 +116,7 @@ footer.main-footer {
     /** @todo Evitar que se corten las líneas */
   }
   .post-body h3 {
-    margin: 1% 0 .5%;
+    margin: 5% 0 2%;
   }
   
 .post footer {

@@ -1,12 +1,9 @@
-@media only screen and (min-width: 768px) and (max-width: 1040px) { 
+@media only screen and (min-width: 900px) and (max-width: 1040px) { 
 
-  .content {
-    padding: 0 3%;
-  }
 
 }
 
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1200px) {
 
   body {
     font-size: 19px;
@@ -17,10 +14,16 @@
     font-size: 1.8em;
     line-height: 1.3em;
     height: 76px;
-    padding-bottom: .45em;
+    padding-bottom: .44em;
   }
     header h2 span {
       line-height: 1.35em;
     }
+
+  .content {
+    max-width: 1040px;
+    margin: 3% auto 1%;
+    padding: 0;
+  }
 
 }

@@ -72,9 +72,8 @@ footer.main-footer {
   text-align: right;
   background: #eee;
   color: gray;
-  font-size: .9em;
+  font-size: .8em;
   font-style: italic;
-  font-family: georgia, serif;
   text-shadow: 1px 1px 1px white;
   margin-top: 6%;
 }
@@ -120,13 +119,38 @@ footer.main-footer {
   }
   
 .post footer {
-  padding: 4% 0;
-}
-  .post footer p {
-    margin: 0;
+  padding: 6% 0 2%;
+  margin: 0;
+}  
+  .share {
+    border-top: 1px solid silver;
+    text-align: center;
   }
+    .share .inside {
+      margin-top: -1.2em;
+    }
+    .share a {
+      padding: .7em;
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1em;
+      border: 1px solid transparent;
+      border-bottom: 2px solid transparent;
+      background: white;
+    }
+      .share a:hover {
+        border: 1px solid silver;
+        border-bottom: 2px solid silver;
+      }
+    a.share-twitter {
+      background: white url(../img/tweet.png) .7em center no-repeat;
+      padding-left: 2.5em;
+    }
+      
   .post footer h3 {
     font-size: 1.3em;
+    margin-top: 1.5em;
   }
     .post footer h3 span {
       color: gray;
@@ -134,12 +158,16 @@ footer.main-footer {
       font-size: .8em;
     }
     
-.related-articles {
-  padding-left: 0;
-}
-  .related-articles li {
-    padding-left: 20px;
+  .related-posts ul {
+    padding-left: 0;
   }
+    .related-posts li {
+      padding-left: 30px;
+      list-style-type: none;
+      margin-top: .5em;
+      background: url(../img/bulb_off.png) left 4px no-repeat;
+      min-height: 28px;
+    }
   
   
   
@@ -159,17 +187,3 @@ footer.main-footer {
     color: #555;
   }
 
-
-
-
-/*
- * OTROS
- */
-
-.twittear {
-  border-radius: 5px;
-  background: blue;
-  color: white;
-  padding: 3px 5px;
-  text-decoration: none;
-}

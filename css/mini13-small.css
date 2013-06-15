@@ -36,13 +36,13 @@ a {
   margin: 0 auto;
 }
 
-header {
+.master-header {
   text-align: center;
   background: silver url(../img/campo-marzio.jpg) center bottom no-repeat;
   margin: 0 auto;
   border-bottom: 1px solid gray;
 }
-  header h2 {
+  .master-header h2 {
     font-family: 'Playfair Display SC';
     font-style: italic;
     font-size: 2.1em;
@@ -53,12 +53,12 @@ header {
     background: rgba(255,255,255,0.9);
     margin: 0;
   }
-    header h2 > span {
+    .master-header h2 > span {
       display: block;
       font-size: .63em;
       font-style: normal;
     }
-      header h2 span span {
+      .master-header h2 span span {
         font-size: .65em;
       }
 
@@ -81,15 +81,20 @@ footer.main-footer {
 
 /******************************** SINGLE POST *********************************/
 
-.post hgroup {
+.post header {
   text-align: center;
 }
-  .post hgroup h2 {
+  .post header h1 {
     margin: 6% 0 3%;
   }
-  .post hgroup abbr {
-    margin: 0;
-    display: block;
+  .post header .author {
+    color: #666;
+    font-family: 'Lustria', georgia, serif;
+  }
+  .post header .separator {
+    padding: 0 .5em;
+  }
+  .post header time {
     border-bottom: 0;
     color: #666;
     font-style: italic;
@@ -97,7 +102,7 @@ footer.main-footer {
   }
 
 .post-body {
-  margin: 6% 0 4%;
+  margin: 6% 0 2%;
 }
   .post-body ul {
     padding-left: 7%;
@@ -119,9 +124,16 @@ footer.main-footer {
   }
   
 .post footer {
-  padding: 6% 0 2%;
+  padding: 4% 0 2%;
   margin: 0;
-}  
+}
+  .entry-tags {
+    margin: 0 0 2.5em;
+    font-size: .9em;
+    text-align: right;
+    font-style: italic;
+  }
+    
   .share {
     border-top: 1px solid silver;
     text-align: center;

@@ -8,10 +8,10 @@ body {
 
 /****************************** GENERAL LAYOUT ********************************/
 
-header {
+header.master-header {
   max-width: 1043px;
 }
-  header h2 {
+  header.master-header h2 {
     display: inline-block;
     width: auto;
     background: rgba(255,255,255,0.9);
@@ -32,15 +32,18 @@ footer.main-footer {
 /******************************** SINGLE POST *********************************/
 
 .post-body {
-  margin: 4% 0 4%;
+  margin: 4% 0 2%;
 }
   .post-body ul {
     padding-left: 2.5em;
   }
 
 .post footer {
-  padding-top: 4%;
+  padding-top: 3%;
 }
+  .entry-tags {
+    margin: 0 0 4em;
+  }
 
 .comments .show-comments {
   padding: 1em 1em 1em 2em;

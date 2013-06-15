@@ -10,13 +10,13 @@
     line-height: 1.7em;
   }
   
-  header h2 {
+  header.master-header h2 {
     font-size: 1.8em;
     line-height: 1.3em;
     height: 76px;
     padding-bottom: .44em;
   }
-    header h2 span {
+    header.master-header h2 span {
       line-height: 1.35em;
     }
 

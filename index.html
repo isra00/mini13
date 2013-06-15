@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="css/mini13-big.css">
     <link rel="stylesheet" href="css/mini13-extra.css">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600|Merriweather:300|Playfair+Display+SC:400,400italic,700,700italic|Lustria' rel='stylesheet' type='text/css'>
-    
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -28,16 +26,20 @@
 
     <div class="main">
     
-      <header>
-          <h2>Israel Viana <span><span>sobre</span> <strong>Desarrollo Web</strong></span></h2>
+      <header class="master-header">
+        <h2>Israel Viana <span><span>sobre</span> <strong>Desarrollo Web</strong></span></h2>
       </header>
 
       <div class="content">    
-        <section class="post">
-          <hgroup>
+        <article class="post">
+          <header>
             <h1>WordPress multi-site sin WordPress multi-site</h1>
-            <abbr title="fecha en formato ISO">1 de enero de 2013</abbr>
-          </hgroup>
+            <div class="meta">
+              <span class="author">Por <a href="">Israel Viana</a></span>
+              <span class="separator">·</span>
+              <time datetime="fecha en formato ISO">1 de enero de 2013</time>
+            </div>
+          </header>
           <div class="post-body">
             <p>Como <a title="Buscar información sobre WordPress Multisite" href="http://www.usaelputogoogle.com/claudio.php?q=wordpress+multisite">sabrás</a>, WordPress permite alojar varios sitios diferentes con una misma instancia del CMS. Pero este sistema tiene algunas <strong>limitaciones</strong>:</p>
             <ul>
@@ -81,6 +83,12 @@ DocumentRoot /var/www/wp-multisite</pre>
           </div><!--/.post-body -->
           
           <footer>
+            <div class="entry-tags">
+              Temas:
+              <a href="">Wordpress</a>,
+              <a href="">experimentos</a>
+            </div>
+              
             <div class="share">
               <div class="inside">
                 <a href="" class="share-twitter">Compártelo en Twitter</a>
@@ -100,8 +108,8 @@ DocumentRoot /var/www/wp-multisite</pre>
             <h3>2 Comentarios</h3>
             <a href="" class="show-comments">Mostrar comentarios</a>
           </section>
-        </section><!--/.post -->
-        
+          
+        </article><!--/.post -->
         
       </div><!--/.content -->
     </div><!--/.main -->
@@ -111,17 +119,17 @@ DocumentRoot /var/www/wp-multisite</pre>
       Este blog es cultura libre. Puedes copiar y redistribuir libremente todos los artículos.
     </footer> 
 
+    <!--<script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
+    </script>-->
   </body>
 </html>

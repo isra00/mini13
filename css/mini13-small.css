@@ -183,11 +183,15 @@ footer.main-footer {
   
   
   
+/*
+ * Comments 
+ */
 .comments {
   
 }
   .comments h3 {
-    margin-bottom: 2%;
+    margin-bottom: 2em;
+    text-align: center;
   }
   .comments .show-comments {
     background: #eee url(../img/dropdown.gif) 2% center no-repeat;
@@ -199,3 +203,39 @@ footer.main-footer {
     color: #555;
   }
 
+.commentlist {
+  list-style: none;
+  padding: 0;
+}
+  .commentlist .comment {
+    margin: 0 0 2em;
+    overflow: hidden;
+  }
+  .comment footer.comment-meta {
+    overflow: hidden;
+  }
+    .comment-meta .avatar {
+      margin-right: 1em;
+      float: left;
+    }
+    .comment-meta .fn {
+      font-size: 1em;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: block;
+    }
+    .comment-meta .at,
+    .comment-meta .says {
+      display: none;
+    }
+    .comment-meta .comment-permalink {
+      text-decoration: none;
+      font-size: .8em;
+    }
+    
+  .comment .comment-content {
+  
+  }
+    .comment .reply {
+      display: none;
+    }
